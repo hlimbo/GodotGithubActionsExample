@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://xi5ipob0m60w"]
+
+[ext_resource type="SpriteFrames" uid="uid://d3k246w4xxu3p" path="res://knight_animation_frames.tres" id="1_0f027"]
+[ext_resource type="Script" uid="uid://dg7oopmios6vu" path="res://player_controller.gd" id="1_2c62f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f027"]
+radius = 9.0
+height = 40.0
+
+[sub_resource type="Gradient" id="Gradient_2c62f"]
+colors = PackedColorArray(0.4, 0.248, 0.250533, 1, 0.516, 0.72, 0.2304, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gyfs4"]
+gradient = SubResource("Gradient_2c62f")
+fill_from = Vector2(0.491453, 0.876068)
+fill_to = Vector2(0.508547, 0.260684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5x1h"]
+size = Vector2(1153, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(271, 160)
+script = ExtResource("1_2c62f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, 9)
+sprite_frames = ExtResource("1_0f027")
+offset = Vector2(5, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_0f027")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(274, 154)
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(217, 224)
+
+[node name="floor2" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(18.0156, 0.3125)
+texture = SubResource("GradientTexture2D_gyfs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_d5x1h")
