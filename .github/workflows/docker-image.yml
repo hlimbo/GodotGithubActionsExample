@@ -1,0 +1,19 @@
+name: Deploy to itch.io
+
+# "run manually
+on: [workflow_dispatch]
+
+env:
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+
+jobs:
+
+  upload-to-itch-io:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the latest main branch of this repository
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag upload-to-itch-io:$(date +%s)
+    - name: Run the Docker image
+      run: docker run -it upload-to-itch-io
