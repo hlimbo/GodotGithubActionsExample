@@ -15,4 +15,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file ./continuous-integration/Dockerfile --tag upload-to-itch-io:$(date +%s)
     - name: Run the Docker image
-      run: docker run --env BUTLER_API_KEY=$BUTLER_API_KEY -it upload-to-itch-io
+      # github actions runners do not support TTY... removing the -t and -i option as its only
+      # useful for local debugging purposes
+      run: docker run --env BUTLER_API_KEY=$BUTLER_API_KEY upload-to-itch-io
