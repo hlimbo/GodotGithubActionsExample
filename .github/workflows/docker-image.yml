@@ -5,6 +5,7 @@ on: [workflow_dispatch]
 
 env:
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  TIMESTAMP: $(
 jobs:
 
   upload-to-itch-io:
@@ -13,7 +14,7 @@ jobs:
     # checkout the latest main branch of this repository
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file ./continuous-integration/Dockerfile --tag upload-to-itch-io:$(date +%s)
+      run: docker build . --file ./continuous-integration/Dockerfile --tag upload-to-itch-io
     - name: Run the Docker image
       # github actions runners do not support TTY... removing the -t and -i option as its only
       # useful for local debugging purposes
