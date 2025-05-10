@@ -5,7 +5,6 @@ on: [workflow_dispatch]
 
 env:
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-  TIMESTAMP: $(
 jobs:
 
   upload-to-itch-io:
