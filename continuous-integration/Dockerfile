@@ -8,7 +8,6 @@ COPY ./continuous-integration/dependencies/export_presets.cfg /
 RUN mkdir -p /godot-export-templates/templates
 COPY ./continuous-integration/dependencies/godot.windows.template_release.x86_64-lto-optimized.exe /godot-export-templates/templates/
 
-# ubuntu takes forever to update and install dependencies
 COPY ./continuous-integration/shell-scripts/pre-install.sh /
 RUN chmod +x pre-install.sh
 RUN ./pre-install.sh
