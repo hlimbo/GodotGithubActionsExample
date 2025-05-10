@@ -18,6 +18,9 @@ cd "/downloads/${PROJECT_NAME}"
 # build the project
 godot --headless --export-release "$TARGET_PLATFORM"
 
+echo "💾  ===>  Compressing the Executable for MAXIMUM EFFICIENCY!  ===> 💾"
+upx /downloads/$PROJECT_NAME/exports/windows/release/*.exe
+
 echo "🤐 ===> zipping $PROJECT_NAME to $ZIP_FILENAME"
 # -j option discards intermediate folders and only zips file contained in the leaf nodes
 zip -j "/${ZIP_FILENAME}" /downloads/$PROJECT_NAME/exports/windows/release/*
