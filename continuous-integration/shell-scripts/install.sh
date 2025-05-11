@@ -28,7 +28,7 @@ install_dependency () {
   ln -s "${install_dir}/${program_name}" "${symlink_name}"
 }
 
-echo "🗃️ ===> Downloading Butler, Godot, and Game Project...."
+echo "🗃️ ===> Downloading Butler, Godot, UPX, and Game Project...."
 mkdir /downloads && cd /downloads
 
 # parallelize the downloads
