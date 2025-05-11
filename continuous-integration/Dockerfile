@@ -7,6 +7,7 @@ COPY ./continuous-integration/dependencies/export_presets.cfg /
 # importing godot export templates to build the game with
 RUN mkdir -p /godot-export-templates/templates
 COPY ./continuous-integration/dependencies/godot.windows.template_release.x86_64-lto-optimized.exe /godot-export-templates/templates/
+COPY ./continuous-integration/dependencies/godot.web.template_release.wasm32.nothreads.zip /godot-export-templates/templates/
 
 COPY ./continuous-integration/shell-scripts/pre-install.sh /
 RUN chmod +x pre-install.sh
