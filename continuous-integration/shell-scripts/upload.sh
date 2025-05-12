@@ -90,3 +90,6 @@ for i in ${!ITCH_IO_PLATFORMS[@]}; do
 	  echo "✅  ===>  successfully uploaded $zip_filename to $ITCH_IO_PATH"
 	fi
 done
+
+target="${ITCH_IO_USERNAME}/${ITCH_IO_PROJECT_NAME}"
+butler status $target --show-all-files
