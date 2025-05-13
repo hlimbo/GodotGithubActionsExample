@@ -16,7 +16,13 @@ COPY ./continuous-integration/dependencies/export_presets.cfg /
 RUN mkdir -p /godot-export-templates/templates
 COPY ./continuous-integration/dependencies/godot.windows.template_release.x86_64-lto-optimized.exe /godot-export-templates/templates/
 COPY ./continuous-integration/dependencies/godot.web.template_release.wasm32.nothreads.zip /godot-export-templates/templates/
-COPY ./continuous-integration/dependencies/macos.zip /godot-export-templates/templates/
+
+# file is a .tar.xz because github has a 100mb file size limit per file in a github repo
+# decompress and zip as macos.zip since godot accepts that as a valid export template for macos
+COPY ./continuous-integration/dependencies/macos.tar.xz /godot-export-templates/templates/
+RUN cd /godot-export-templates/templates && tar -xJvf macos.tar.xz
+RUN cd /godot-export-templates/templates && zip macos.zip macos_template.app 
+
 
 # CMD - what the startup program or command will be
 # CMD ["/usr/bin/bash"]
