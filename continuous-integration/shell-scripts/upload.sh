@@ -21,6 +21,10 @@ cd "/downloads/${PROJECT_NAME}"
 
 # build the project
 for i in ${!PLATFORMS[@]}; do
+	# As of Godot 4.4, delete the .godot folder that gets generated after each build. This resolves the issue of not running on Mac builds
+	# as the .godot/imported folder contains assets in .ctex, .astc.ctex and .bptc.ctex and .md5 file extension formats
+	# a working mac build in the .godot/imported folder has .ctex and .md5 file extensions only
+	rm -rf ".godot"
 	platform="${PLATFORMS[$i]}"
 	echo "🛠️ ===> Building godot project for ${platform}..."
 	godot --headless --export-release "${platform}"
