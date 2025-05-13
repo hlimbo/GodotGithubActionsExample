@@ -2,10 +2,10 @@
 ITCH_IO_USERNAME="hlimbo"
 ITCH_IO_PROJECT_NAME="github-actions-godot-game-example"
 
-EXPORT_PATHS=("windows/release" "web/release")
-PLATFORMS=("Windows Desktop" "Web")
-ZIP_FILENAMES=("game-windows.zip" "game-web.zip")
-ITCH_IO_PLATFORMS=("windows-beta" "web")
+EXPORT_PATHS=("windows/release" "web/release" "mac/release")
+PLATFORMS=("Windows Desktop" "Web" "macOS")
+ZIP_FILENAMES=("game-windows.zip" "game-web.zip" "game-mac.zip")
+ITCH_IO_PLATFORMS=("windows-beta" "web" "mac-beta")
 
 PROJECT_NAME="GodotGithubActionsExample-main"
 
@@ -17,7 +17,6 @@ mv /export_presets.cfg "/downloads/${PROJECT_NAME}"
 for export_path in ${EXPORT_PATHS[@]}; do
 	mkdir -p "/downloads/${PROJECT_NAME}/exports/${export_path}"
 done
-# mkdir -p "/downloads/${PROJECT_NAME}/exports/mac/release"
 cd "/downloads/${PROJECT_NAME}"
 
 # build the project

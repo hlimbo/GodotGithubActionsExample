@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s1hna7tx3iy6"
-path.bptc="res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.bptc.ctex"
-path.astc="res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.astc.ctex"
+path="res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://knight/_Idle.png"
-dest_files=["res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.bptc.ctex", "res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.astc.ctex"]
+dest_files=["res://.godot/imported/_Idle.png-03f9a02982b98b624183084f0e5c297c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=1.0
 compress/hdr_compression=0

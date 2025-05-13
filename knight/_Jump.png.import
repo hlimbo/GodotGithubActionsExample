@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vkur1u8ufogw"
-path.bptc="res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.bptc.ctex"
-path.astc="res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.astc.ctex"
+path="res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://knight/_Jump.png"
-dest_files=["res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.bptc.ctex", "res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.astc.ctex"]
+dest_files=["res://.godot/imported/_Jump.png-fded394a4e80d72332123306a95e7e9e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=0
