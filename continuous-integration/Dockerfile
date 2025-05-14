@@ -19,7 +19,8 @@ COPY ./continuous-integration/dependencies/* /godot-export-templates/templates/
 
 # assumption: Github Actions Checkout dependency inserts the current repo into the runner's filesystem
 # copy game assets into docker container
-COPY ./game /downloads
+RUN mkdir -p /downloads/game
+COPY ./game /downloads/game/
 
 # CMD - what the startup program or command will be
 # CMD ["/usr/bin/bash"]
