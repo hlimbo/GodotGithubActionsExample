@@ -12,6 +12,8 @@ jobs:
     steps:
     # checkout the latest main branch of this repository
     - uses: actions/checkout@v4
+      with:
+        lfs: "true"
     - name: Build the Docker image
       run: docker build . --file ./continuous-integration/Dockerfile --tag upload-to-itch-io
     - name: Run the Docker image
