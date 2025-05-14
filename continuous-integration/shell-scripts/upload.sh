@@ -7,7 +7,7 @@ PLATFORMS=("Windows Desktop" "Web" "macOS")
 ZIP_FILENAMES=("game-windows.zip" "game-web.zip" "game-mac.zip")
 ITCH_IO_PLATFORMS=("windows-beta" "web" "mac-beta")
 
-PROJECT_NAME="GodotGithubActionsExample-main"
+PROJECT_NAME="game"
 
 # stops execution at first failed command
 set -e
@@ -17,6 +17,7 @@ mv /export_presets.cfg "/downloads/${PROJECT_NAME}"
 for export_path in ${EXPORT_PATHS[@]}; do
 	mkdir -p "/downloads/${PROJECT_NAME}/exports/${export_path}"
 done
+
 cd "/downloads/${PROJECT_NAME}"
 
 # build the project
@@ -30,7 +31,7 @@ for i in ${!PLATFORMS[@]}; do
 	godot --headless --export-release "${platform}"
 done
 
-echo "💾  ===>  Compressing the Executable for MAXIMUM EFFICIENCY!  ===> 💾"
+echo "💾  ===>  Compressing the Windows Executable for MAXIMUM EFFICIENCY!  ===> 💾"
 upx /downloads/$PROJECT_NAME/exports/windows/release/*.exe
 
 for i in ${!ZIP_FILENAMES[@]}; do

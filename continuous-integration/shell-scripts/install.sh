@@ -29,12 +29,11 @@ install_dependency () {
 }
 
 echo "🗃️ ===> Downloading Butler, Godot, UPX, and Game Project...."
-mkdir /downloads && cd /downloads
+cd /downloads
 
 # parallelize the downloads
 echo "https://broth.itch.zone/butler/${BUTLER_CHANNEL}/${BUTLER_VERSION}/archive/default butler.zip" >> url-list
 echo "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/${GODOT_EDITOR}.zip godot-editor.zip" >> url-list
-echo "https://github.com/hlimbo/GodotGithubActionsExample/archive/refs/heads/main.zip game-project.zip" >> url-list
 echo "https://github.com/upx/upx/releases/download/v5.0.1/upx-5.0.1-amd64_linux.tar.xz upx-5.0.1-amd64_linux.tar.xz" >> url-list
 # pipe in download url and filename for wget to download in parallel
 # use 8 jobs max to run concurrently
@@ -51,7 +50,6 @@ rm url-list
 echo "🔧 ===> Installing Butler and Godot Editor..."
 install_dependency "butler-linux" "/downloads/butler.zip" "butler" "butler"
 install_dependency "godot-editor" "/downloads/godot-editor.zip" "${GODOT_EDITOR}" "godot"
-unzip /downloads/game-project.zip -d /downloads
 
 # decompress, unzip, and install upx
 cd /downloads
